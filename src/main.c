@@ -19,7 +19,7 @@ int main(int argc, char *argv[]) {
   char *addstring = NULL;
   bool newfile = false;
 
-  int c = 0;
+  int c;
 
   int dbfd = -1;
   struct dbheader_t *dbhdr = NULL;
