@@ -140,10 +140,13 @@ int create_db_header(int fd, struct dbheader_t **headerOut) {
     printf("Malloc failed to create db header\n");
     return STATUS_ERROR;
   }
+  
   header->version = 0x1;
   header->count = 0;
   header->magic = HEADER_MAGIC;
   header->filesize = sizeof(struct dbheader_t);
+  
+  write(fd, header, sizeof(struct dbheader_t));
 
   *headerOut = header;
 
